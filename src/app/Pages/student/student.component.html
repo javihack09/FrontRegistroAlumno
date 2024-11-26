@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Alumno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div>
+            <button>Inicio</button>
+        </div>
+        <button>Cierra Sesión</button>
+    </header>
+
+    <main>
+        <h1>Registro Alumno</h1>
+        <form>
+            <div>
+                <label for="descripcion">Nombre Alumno*</label>
+                <textarea id="descripcion"></textarea>
+            </div>
+            <div>
+            <div>
+                <label for="descripcion">Materias(Seleccionar 3)</label>
+            </div>
+
+                    @for (materia of listMateria; track materia.IdMaterias) {
+
+                        <div style="display: flex; align-items: center;">
+                            <label for="cbox2" style="margin-left: 10px;" >{{materia.nombreMateria}}</label>
+                            <input type="checkbox" id="cbox2" value="second_checkbox"/>
+
+                        </div>
+
+                    } 
+                
+
+            </div>
+            <div>
+                <button type="button" class="guardar">Guardar Cambios</button>
+                <button type="button" class="cancelar">Cancelar</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

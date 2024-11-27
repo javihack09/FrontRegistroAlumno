@@ -4,7 +4,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { EstudianteService } from '../../Services/estudiante.service';
-import { Estudiante } from '../../Models/Estudiante';
+import { Estudiante, verClase } from '../../Models/Estudiante';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,20 +16,30 @@ import { Router } from '@angular/router';
 export class InicioComponent {
 
   private estudianteServicio = inject(EstudianteService);
-  public listEstudiante:Estudiante[] = [];
-  public displayedColumns:string[] = ['nombreAlumno','materia1','materia2','materia3'];
+  public listEstudiantes:verClase[] = [];
+  public displayedColumns:string[] = ['nombreAlumno','nombreMateria','nombreProfesor','accion'];
 
   obtenerEstudiantes(){
     this.estudianteServicio.lista().subscribe({
       next:(data)=>{
         if(data.length > 0){
-          this.listEstudiante = data
+          this.listEstudiantes = data
+          console.log(this.listEstudiantes);
+          
         }
       },
       error:(err)=>{
         console.log(err.message)
       }
     })
+  }
+
+  irARegistroAlumno(): void {
+    this.router.navigate(['/Alumno']);
+  }
+
+  irAInicio(): void {
+    this.router.navigate(['/']);
   }
 
 

@@ -1,9 +1,9 @@
- export interface Estudiante{
-     IdEstudiante:number;
-     nombreAlumno:string;
-     Materia1:string,
-     Materia2:string,
-     Materia3:string
+export interface Estudiante{
+  IdEstudiante:number;
+  nombreAlumno:string;
+  Materia1:number,
+  Materia2:number,
+  Materia3:number
 }
 
 export interface Student {
@@ -26,3 +26,8 @@ export interface Professor {
   subjects: Subject[];
 }
 
+export interface verClase{
+  nombreAlumno?:string;
+  nombreMateria?:string;
+  nombreProfesor?:string
+}

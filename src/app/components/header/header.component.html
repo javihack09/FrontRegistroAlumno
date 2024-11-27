@@ -1,0 +1,33 @@
+<mat-toolbar color="primary" style="  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <!-- Menú hamburguesa para móviles -->
+    <button mat-icon-button (click)="sidenav.toggle()" class="mobile-menu-button">
+      <mat-icon>menu</mat-icon>
+    </button>
+  
+    <!-- Título del toolbar -->
+    <span class="toolbar-title">Administración de Estudiantes</span>
+  
+    <!-- Espaciador para empujar los botones a la derecha -->
+    <span class="spacer"></span>
+  
+    <!-- Botones de navegación (visibles en pantallas grandes) -->
+    <div class="desktop-menu">
+      <button mat-button (click)="irAInicio()">Inicio</button>
+      <button mat-button (click)="irARegistroAlumno()">Registro Alumno</button>
+      <button mat-button (click)="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+  </mat-toolbar>
+  
+  <!-- Contenedor del sidenav (solo para móviles) -->
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over" class="sidenav">
+      <button mat-button (click)="irAInicio()">Inicio</button>
+      <button mat-button (click)="irARegistroAlumno()">Registro Alumno</button>
+      <button mat-button (click)="cerrarSesion()">Cerrar Sesión</button>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <!-- Contenido principal -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

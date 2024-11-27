@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { appsettings } from '../Settings/appsettings';
-import { Estudiante } from '../Models/Estudiante';
+import { Estudiante, verClase } from '../Models/Estudiante';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,14 @@ export class EstudianteService {
   constructor() { }
 
   lista(){
-    return this.http.get<Estudiante[]>(this.apiURL+"/lista");
+    return this.http.get<verClase[]>(this.apiURL+"/lista");
   }
+
+  crearEstudiante(data:Estudiante){
+    return this.http.post(this.apiURL, data);
+  }
+
+
 
   
 }

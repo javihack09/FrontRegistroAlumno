@@ -1,6 +1,8 @@
 export interface  Materia{
     IdMaterias:number,
-    NombreMateria:string,
+    nombreMateria:string,
     Creditos:string,
-    idProfesor:number
+    idProfesor:number,
+    NombreProfesor:String,
+    selected:false
 }

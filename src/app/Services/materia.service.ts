@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { appsettings } from '../Settings/appsettings';
-import { Estudiante } from '../Models/Estudiante';
+import { Materia } from '../Models/Materia';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class MateriaService{
     constructor() { }
   
     lista(){
-      return this.http.get<Estudiante[]>(this.apiURL+"/materias");
+      return this.http.get<Materia[]>(this.apiURL+"/materias");
     }
   
     }

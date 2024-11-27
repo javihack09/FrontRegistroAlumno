@@ -1,10 +1,30 @@
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Registro Alumno</title>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+      <header>
+          <div>
+            <button (click)="irAInicio()">Inicio</button>
+          </div>
+          <div>
+            <button (click)="irARegistroAlumno()">Registro Estudiantes</button>
+          </div>
+          <button>Cierra Sesión</button>
+      </header>
+  
+      <main>
+          <h1>Estudiantes</h1>
  <mat-card style="width: 70%;margin:50px auto">
 <mat-card-header>
 <mat-card-title><p>Lista Estudiantes</p> </mat-card-title>
 </mat-card-header>
     <mat-card-content>
 
-        <table mat-table [dataSource]="listEstudiante" class="mat-elevation-z2" style="margin: top 20px">
+        <table mat-table [dataSource]="listEstudiantes" class="mat-elevation-z2" style="margin: top 20px">
 
             <ng-container matColumnDef="nombreAlumno">
               <th mat-header-cell *matHeaderCellDef> nombreAlumno </th>
@@ -12,19 +32,21 @@
             </ng-container>
           
 
-            <ng-container matColumnDef="materia1">
-              <th mat-header-cell *matHeaderCellDef> materia1 </th>
-              <td mat-cell *matCellDef="let element"> {{element.materia1}} </td>
+            <ng-container matColumnDef="nombreMateria">
+              <th mat-header-cell *matHeaderCellDef> nombreMateria </th>
+              <td mat-cell *matCellDef="let element"> {{element.nombreMateria}} </td>
             </ng-container>
           
-            <ng-container matColumnDef="materia2">
-              <th mat-header-cell *matHeaderCellDef> materia2 </th>
-              <td mat-cell *matCellDef="let element"> {{element.materia2}} </td>
+            <ng-container matColumnDef="nombreProfesor">
+              <th mat-header-cell *matHeaderCellDef> nombreProfesor </th>
+              <td mat-cell *matCellDef="let element"> {{element.nombreProfesor}} </td>
             </ng-container>
-          
-            <ng-container matColumnDef="materia3">
-              <th mat-header-cell *matHeaderCellDef> materia3 </th>
-              <td mat-cell *matCellDef="let element"> {{element.materia3}} </td>
+
+            <ng-container matColumnDef="accion">
+              <th mat-header-cell *matHeaderCellDef> </th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-raised-button color="primary" >Ver Clase</button>
+              </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

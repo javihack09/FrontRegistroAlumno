@@ -1,0 +1,52 @@
+/* header.component.css */
+
+/* Espaciador para empujar los botones hacia la derecha */
+.spacer {
+    flex: 1 1 auto;
+  }
+  
+  /* Título del toolbar */
+  .toolbar-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  /* Botón de menú móvil */
+  .mobile-menu-button {
+    display: none; /* Oculto en pantallas grandes */
+  }
+  
+  /* Menú de escritorio */
+  .desktop-menu {
+    display: flex;
+  }
+  
+  /* Margen opcional para los botones */
+  button.mat-button {
+    margin-left: 8px;
+  }
+  
+  /* Estilos para el sidenav */
+  .sidenav-container {
+    display: none; /* Oculto en pantallas grandes */
+  }
+  
+  .sidenav {
+    width: 250px;
+  }
+  
+  /* Media Queries para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .mobile-menu-button {
+      display: block; /* Mostrar en pantallas pequeñas */
+    }
+  
+    .desktop-menu {
+      display: none; /* Ocultar en pantallas pequeñas */
+    }
+  
+    .sidenav-container {
+      display: block; /* Mostrar sidenav en pantallas pequeñas */
+    }
+  }
+  

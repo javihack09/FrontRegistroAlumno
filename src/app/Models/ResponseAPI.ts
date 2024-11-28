@@ -1,4 +1,4 @@
 export interface ResponseAPI{
 
-    isSucces:boolean;
+    idcreado:number;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'; // Incluye OnInit
+import { Component, OnInit } from '@angular/core'; 
 import { Router, NavigationEnd } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
@@ -13,19 +13,20 @@ import { FooterComponent } from './components/footer/footer.component';
 })
 export class AppComponent implements OnInit {
   title = 'RegistroEstudiantes';
-  pageTitle: string = 'RegistroEstudiantes';
+  pageTitle: string = 'Registro Estudiantes';
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    // Suscribirse a los eventos de navegación
+
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        // Cambiar el título basado en la URL actual
         if (this.router.url === '/Alumno') {
           this.pageTitle = 'Registro de Estudiantes';
         } else if (this.router.url === '/') {
           this.pageTitle = 'Lista de Estudiantes';
+        } else if (this.router.url.includes('clase')) {
+          this.pageTitle = 'Clase';
         }
       }
     });

@@ -38,10 +38,5 @@ export class HeaderComponent {
     }
   }
 
-  cerrarSesion() {
-    console.log('Cerrar sesión');
-    if (this.sidenav) {
-      this.sidenav.close(); // Cierra el sidenav si está abierto
-    }
-  }
+  
 }

@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { MateriaService } from '../../Services/materia.service';
 import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { Estudiante } from '../../Models/Estudiante';
+import { ResponseAPI } from '../../Models/ResponseAPI';
 import { EstudianteService } from '../../Services/estudiante.service';
 
 
@@ -22,6 +23,8 @@ export class StudentComponent {
   public newEstudiante!: Estudiante;
   nombreEstudiante: string = '';
   private estudianteServicio = inject(EstudianteService);
+
+  id = 0;
 
   selectedCount = 0;
   minSelection = 3;
@@ -85,8 +88,8 @@ export class StudentComponent {
 
   getSelectedValues(): number[] {
     return this.listMateria
-      .filter((materia) => materia.selected) // Filtra los seleccionados
-      .map((materia) => materia.idMaterias); // Devuelve el IdMaterias de cada uno
+      .filter((materia) => materia.selected) 
+      .map((materia) => materia.idMaterias); 
   }
 
   validarForm(){
@@ -98,7 +101,6 @@ export class StudentComponent {
       
       if(bandera==false){
         this.crearEstudiante();
-        this.router.navigate(['/']);
       }else{
         alert('ocurrio un error')
         
@@ -116,7 +118,8 @@ export class StudentComponent {
   }
 
   irAInicio(): void {
-    this.router.navigate(['/']);
+    const miDato = localStorage.getItem('miDato');
+    this.router.navigate(['/Estudiante', miDato]);
   }
 
   validarMaterias(seleccionados: number[]): boolean {
@@ -154,7 +157,12 @@ export class StudentComponent {
 
     this.estudianteServicio.crearEstudiante(this.newEstudiante).subscribe({
       next: (respuesta) => {
+        this.id = respuesta.id;
+
+        localStorage.setItem('miDato', respuesta.id.toString());
+        
         alert("Registro Creado Exitosamente");
+        this.router.navigate(['/Estudiante',this.id]);
       },
       error: (error) => {
         alert("Ocurrio un error");

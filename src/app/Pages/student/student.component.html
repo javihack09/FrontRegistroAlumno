@@ -21,7 +21,6 @@
     </form>
   </div>
 
-  <!-- Tabla con scroll -->
   <div class="table-section"><div class="form-row">
     <label for="search">Buscar Materias:</label>
     <input
@@ -31,9 +30,15 @@
       placeholder="Buscar materia"
       class="form-input"
     />
+
+    @if (showError) {
+      <p style="color: red;">Debes seleccionar exactamente {{ minSelection }} materias.</p>
+  }
+  <p>Materias seleccionadas: {{ selectedCount }}</p>
   </div>
-    <p>Materias seleccionadas: {{ selectedCount }}</p>
+
     <div class="table-container">
+      
       <table mat-table [dataSource]="listMateria" class="mat-elevation-z8" multiTemplateDataRows>
         <ng-container matColumnDef="nombreMateria">
           <th mat-header-cell *matHeaderCellDef> Materia </th>

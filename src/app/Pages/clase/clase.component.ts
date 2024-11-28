@@ -7,32 +7,30 @@ import { EstudianteService } from '../../Services/estudiante.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-inicio',
+  selector: 'app-clase',
   imports: [MatCardModule,MatTableModule,MatIconModule,MatButtonModule],
-  templateUrl: './inicio.component.html',
-  styleUrl: './inicio.component.css'
+  templateUrl: './clase.component.html',
+  styleUrl: './clase.component.css'
 })
-export class InicioComponent implements OnInit{
+export class ClaseComponent implements OnInit{
 
-  @Input('id')idEstudiante! : number;
+  @Input('clase')claseEstudiante! : string;
 
   private estudianteServicio = inject(EstudianteService);
   public listEstudiantes:any=[];
-  public displayedColumns:string[] = ['nombreAlumno','nombreMateria','nombreProfesor','accion'];
+  public displayedColumns:string[] = ['nombreAlumno','nombreMateria','nombreProfesor'];
 
   ngOnInit(): void {
-    if(this.idEstudiante != 0){
+
+   console.log(this.claseEstudiante);
+   
+    if(this.claseEstudiante){
       this.obtenerEstudiantes();
     }
   }
 
   obtenerEstudiantes(){
-    if(this.idEstudiante === undefined)
-    {
-      const miDato = localStorage.getItem('miDato');
-      this.idEstudiante = parseInt(miDato!)
-    }
-    this.estudianteServicio.obtener(this.idEstudiante).subscribe({
+    this.estudianteServicio.Clase(this.claseEstudiante).subscribe({
       next:(data)=>{
         if(data){
           this.listEstudiantes = data
@@ -46,10 +44,6 @@ export class InicioComponent implements OnInit{
     })
   }
 
-  irARegistroAlumno(): void {
-    this.router.navigate(['/Alumno']);
-  }
-
   irAInicio(): void {
     const miDato = localStorage.getItem('miDato');
     console.log(miDato);
@@ -57,16 +51,10 @@ export class InicioComponent implements OnInit{
     this.router.navigate(['/Estudiante',miDato]);
   }
 
-  clase(materia:string): void {
-    this.router.navigate(['/clase'], { queryParams: { clase: materia } })
-  }
-
-
   constructor(private router:Router) {
 
-   this.obtenerEstudiantes();
-
-  }
-
+    this.obtenerEstudiantes();
+ 
+   }
 
 }

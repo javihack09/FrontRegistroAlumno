@@ -100,6 +100,13 @@ label {
   justify-content: flex-end;
 }
 
+.buttonsClass {
+  display: flex;
+  margin-top: 20px;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
 /* Estilo para la sección de la tabla */
 .table-section {
   flex: 1;

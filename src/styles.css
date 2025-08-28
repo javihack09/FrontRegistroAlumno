@@ -97,7 +97,8 @@ label {
 .form-buttons {
   display: flex;
   gap: 8px;
-  justify-content: flex-end;
+  justify-content: center;
+  width: 100%;
 }
 
 .buttonsClass {
@@ -117,7 +118,8 @@ label {
 /* Contenedor de la tabla */
 .table-container {
   width: 100%;
-  max-height: calc(100% - 160px); /* Ajusta según el header y el footer */
+  height: 100%;
+  max-height: calc(100% - 80px); /* Ajusta según el header y el footer */
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   overflow-y: auto; /* Scroll en el contenido de la tabla */

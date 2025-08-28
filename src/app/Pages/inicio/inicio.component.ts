@@ -21,7 +21,9 @@ export class InicioComponent implements OnInit{
   public displayedColumns:string[] = ['nombreAlumno','nombreMateria','nombreProfesor','accion'];
 
   ngOnInit(): void {
+    console.log(this.idEstudiante)
     if(this.idEstudiante != 0){
+      console.log("ingrese al if")
       this.obtenerEstudiantes();
     }
   }

@@ -18,8 +18,8 @@ export class EstudianteService {
     return this.http.get<verClase[]>(this.apiURL+"/lista");
   }
 
-  crearEstudiante(data:Estudiante): Observable<{ id: number }>{
-    return this.http.post<{ id: number }>(this.apiURL, data);
+  crearEstudiante(data:Estudiante): Observable<{ id: string }>{
+    return this.http.post<{ id: string }>(this.apiURL, data);
   }
 
   obtener(id:number){

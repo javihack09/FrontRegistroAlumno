@@ -1,0 +1,227 @@
+.full-screen {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom, #0a0a23, #001018);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4rem;
+
+  .background-content {
+    max-width: 40%;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+  }
+
+.logo-container {
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  gap: 15px; /* Espacio entre texto e imagen */
+  font-family: 'Orbitron', sans-serif; /* Asegúrate de tener la fuente cargada */
+}
+
+.logo-text {
+  text-transform: uppercase;
+}
+
+.inter {
+  transform: skew(-15deg);
+  font-size: 24px;
+  color: #f58220; 
+  font-style: italic;
+  font-weight: 700;
+  margin-left: 25px;
+}
+.inter::before {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 30%;
+  height: 2px; /* Grosor de la línea */
+  background: black; /* Color de la línea */
+  transform: translateY(-50%);
+  pointer-events: none; /* Para que no interfiera con el texto */
+}
+
+.slogan {
+  font-family: 'Arial Narrow', Arial, sans-serif; /* o usa una fuente similar */
+  color: white;
+  font-weight: 600; /* Semi-bold */
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 14px;
+  border-top: 2px solid white;
+}
+
+.rapidisimo {
+  font-size: 48px;
+  color: white;
+  font-weight: 900;
+  font-style: italic;
+  transform: skew(-15deg);
+  
+}
+
+.rapidisimo::before {
+  content: '';
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Grosor de la línea */
+  background: black; /* Color de la línea */
+  transform: translateY(-50%);
+  pointer-events: none; /* Para que no interfiera con el texto */
+}
+
+.logo-image img {
+  height: 320px; /* Ajusta el tamaño de la imagen */
+  width: auto;
+}
+
+  .login-card {
+    position: absolute;
+    right: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: black;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 2.5rem;
+    width: 400px;
+    z-index: 10;
+
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: #6c63ff;
+      text-decoration: none;
+    }
+
+    form {
+      margin-top: 1rem;
+
+      .full-width {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      .forgot-password {
+        display: block;
+        text-align: right;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+      }
+
+      .sign-in-btn {
+        width: 100%;
+        background-color: #001802;
+        color: rgb(255, 255, 255);
+        margin-bottom: 1rem;
+      }
+
+      .divider {
+        text-align: center;
+        margin: 1rem 0;
+        position: relative;
+
+        span {
+          background: white;
+          padding: 0 1rem;
+          position: relative;
+          z-index: 1;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background: #ccc;
+          z-index: 0;
+        }
+      }
+
+      .social-login {
+        display: flex;
+        gap: 1rem;
+
+        .google-btn,
+        .facebook-btn {
+          flex: 1;
+        }
+      }
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #888;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  height: 600px;
+  width: 600px;
+  position: relative;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+

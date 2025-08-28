@@ -1,17 +1,21 @@
-<app-header></app-header> <!-- Header de la página -->
 
-<mat-card class="main-card">
+<app-header *ngIf="showLayout" ></app-header> <!-- Header de la página -->
+
+<mat-card class="main-card" *ngIf="showLayout" >
   <!-- Encabezado del card -->
   <mat-card-header class="card-header">
     <div class="header-content">
       <h1>{{ pageTitle }}</h1> <!-- Título dinámico -->
     </div>
   </mat-card-header>
-
-  <!-- Contenido dinámico dentro del card -->
+  
   <mat-card-content class="card-body">
-    <router-outlet></router-outlet> <!-- Aquí se cargan las vistas -->
+
+<router-outlet></router-outlet> <!-- Aquí se cargan las vistas -->
+
   </mat-card-content>
 </mat-card>
 
-<app-footer></app-footer> <!-- Footer de la página -->
+<router-outlet *ngIf="!showLayout"></router-outlet>
+
+<app-footer *ngIf="showLayout"></app-footer> <!-- Footer de la página -->

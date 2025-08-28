@@ -25,16 +25,16 @@ export class HeaderComponent {
   constructor(private router: Router) {}
 
   irAInicio() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/Inicio']);
     if (this.sidenav) {
-      this.sidenav.close(); // Cierra el sidenav si está abierto
+      this.sidenav.close(); 
     }
   }
 
   irARegistroAlumno() {
     this.router.navigate(['/Alumno']);
     if (this.sidenav) {
-      this.sidenav.close(); // Cierra el sidenav si está abierto
+      this.sidenav.close();
     }
   }
 

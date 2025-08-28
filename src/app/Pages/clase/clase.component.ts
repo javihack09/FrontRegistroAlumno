@@ -48,7 +48,7 @@ export class ClaseComponent implements OnInit{
     const miDato = localStorage.getItem('miDato');
     console.log(miDato);
     
-    this.router.navigate(['/Estudiante',miDato]);
+    this.router.navigate(['/Estudiante',parseInt(miDato!)]);
   }
 
   constructor(private router:Router) {

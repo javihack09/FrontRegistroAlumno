@@ -119,7 +119,7 @@ export class StudentComponent {
 
   irAInicio(): void {
     const miDato = localStorage.getItem('miDato');
-    this.router.navigate(['/Estudiante', miDato]);
+    this.router.navigate(['/Estudiante',miDato]);
   }
 
   validarMaterias(seleccionados: number[]): boolean {
@@ -150,30 +150,34 @@ export class StudentComponent {
   displayedColumns: string[] = ['nombreMateria', 'nombreProfesor', 'checkbox'];
 
   crearEstudiante(){
-    this.newEstudiante.nombreAlumno = this.nombreEstudiante;
+
+    const miDato = localStorage.getItem('miDato'); 
+
+    this.newEstudiante.IdEstudiante = parseInt(miDato!);
     this.newEstudiante.Materia1 = this.seleccionados[0];
     this.newEstudiante.Materia2 = this.seleccionados[1];
     this.newEstudiante.Materia3 = this.seleccionados[2];
 
+    console.log(this.newEstudiante)
+
     this.estudianteServicio.crearEstudiante(this.newEstudiante).subscribe({
       next: (respuesta) => {
-        this.id = respuesta.id;
+        this.newEstudiante.nombreAlumno = respuesta.id;
 
         localStorage.setItem('miDato', respuesta.id.toString());
         
         alert("Registro Creado Exitosamente");
-        this.router.navigate(['/Estudiante',this.id]);
+        this.router.navigate(['/Estudiante',miDato]);
       },
       error: (error) => {
         alert("Ocurrio un error");
       }
-    });
+    })
+    
+    console.log(this.newEstudiante.nombreAlumno)
+
+    ;
     
   }
-
-  
-
-
-
 
 }

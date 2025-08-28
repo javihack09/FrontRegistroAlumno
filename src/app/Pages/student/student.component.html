@@ -1,25 +1,6 @@
 <div class="body-container">
   <!-- Formulario fijo -->
-  <div class="form-section">
-    <form novalidate>
-      <div class="form-row">
-        <label for="descripcion">Nombre Alumno*</label>
-        <input
-          type="text"
-          [(ngModel)]="nombreEstudiante"
-          name="nombreEstudiante"
-          id="descripcion"
-          placeholder="Ingresa el nombre del estudiante"
-          class="form-input"
-        />
-        <div class="form-buttons">
-          <button mat-raised-button color="primary" (click)="validarForm()">Registrar</button>
-          <button mat-raised-button color="warn" (click)="irAInicio()">Cancelar</button>
-        </div>
-      </div>
-      
-    </form>
-  </div>
+  
 
   <div class="table-section"><div class="form-row">
 
@@ -57,5 +38,15 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
     </div>
+  </div>
+  <div class="form-section">
+    <form novalidate>
+      <div class="form-row">
+        <div class="form-buttons">
+          <button mat-raised-button color="primary" (click)="validarForm()">Registrar</button>
+        </div>
+      </div>
+      
+    </form>
   </div>
 </div>

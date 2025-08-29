@@ -18,7 +18,7 @@
       No tienes una cuenta?
       <a href="#" (click)="abrirModal(); $event.preventDefault()">Inscríbete</a>
     </p>
-    <form>
+    <form (ngSubmit)="iniciarsesion()">
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>correo</mat-label>
         <input
@@ -47,7 +47,7 @@
         mat-raised-button
         color="primary"
         class="sign-in-btn"
-        (click)="iniciarsesion()">
+         type="submit">
         Iniciar sesion
       </button>
       <div class="divider"><span>o</span></div>

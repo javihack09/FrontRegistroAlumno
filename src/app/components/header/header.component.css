@@ -1,9 +1,13 @@
+::ng-deep mat-toolbar.mat-primary {
+  background-color: white
+}
 .spacer {
   flex: 1 1 auto;
 }
 .toolbar-title {
-  font-size: 1.5rem;
+  font-size: 1.0rem;
   font-weight: 500;
+  color: #005cbb;
 }
 .mobile-menu-button {
   display: none;

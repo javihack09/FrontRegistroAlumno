@@ -34,10 +34,9 @@ app-root {
 }
 
 .card-header {
-  background: url("https://media.istockphoto.com/id/1318101781/es/foto/fondo-de-textura-negra-de-piedra-pared-de-cemento-oscuro.jpg?s=612x612&w=0&k=20&c=Nw2TTFltqVpwvkk0NwaZ60iaZVQ4dkhnzI46-qt6wyY=")
-    no-repeat center center;
+  background-color: white;
   background-size: cover;
-  color: white;
+  color: #005cbb;
   padding: 16px;
   text-align: center;
 }
@@ -46,6 +45,7 @@ app-root {
   flex: 1;
   overflow-y: auto;
   padding: 16px;
+  background-color: white;
 }
 
 .form-section {
@@ -103,7 +103,7 @@ label {
 .table-section {
   flex: 1;
   padding: 16px;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .table-container {

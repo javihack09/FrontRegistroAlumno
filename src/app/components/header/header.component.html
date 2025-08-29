@@ -5,14 +5,8 @@
   <span class="toolbar-title">Administración de Estudiantes</span>
   <span class="spacer"></span>
   <div class="desktop-menu">
-    <button mat-button (click)="irAInicio()">Inicio</button>
-    <button mat-button (click)="irARegistroAlumno()">Registro Alumno</button>
+    <button color="#005cbb" mat-button (click)="irAInicio()">Inicio</button>
+    <button color="#005cbb" mat-button (click)="irARegistroAlumno()">Registro Alumno</button>
+    <button color="#005cbb" mat-button (click)="cerrarsesion()">Cerrar sesion</button>
   </div>
 </mat-toolbar>
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="over" class="sidenav">
-    <button mat-button (click)="irAInicio()">Inicio</button>
-    <button mat-button (click)="irARegistroAlumno()">Registro Alumno</button>
-  </mat-sidenav>
-  <mat-sidenav-content> </mat-sidenav-content>
-</mat-sidenav-container>

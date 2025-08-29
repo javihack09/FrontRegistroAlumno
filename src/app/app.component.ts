@@ -38,6 +38,12 @@ export class AppComponent implements OnInit, OnDestroy {
         else if (this.router.url === '/Inicio' ) {
           this.showLayout = true;
         }
+        else if (this.router.url === '/Login' ) {
+          this.showLayout = false;
+        }
+        else if (this.router.url.includes('Estudiante')) {
+          this.pageTitle = 'Registro de Estudiantes';
+        }
       }
 
       this.popStateListener = (event: PopStateEvent) => {

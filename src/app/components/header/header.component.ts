@@ -35,4 +35,10 @@ export class HeaderComponent {
       this.sidenav.close();
     }
   }
+cerrarsesion(){
+
+  this.router.navigate(['/Login']);
+
+}
+
 }

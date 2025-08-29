@@ -1,78 +1,114 @@
 <div class="full-screen">
   <div class="logo-container">
-  <div class="logo-text">
-    <div class="inter">INTER</div>
-    <div class="rapidisimo">RAPIDISIMO</div>
-    <div class="slogan">TE LA PONEMOS REFÁCIL</div>
+    <div class="logo-text">
+      <div class="inter">INTER</div>
+      <div class="rapidisimo">RAPIDISIMO</div>
+      <div class="slogan">TE LA PONEMOS REFÁCIL</div>
+    </div>
+    <div class="logo-image">
+      <img
+        src="https://interrapidisimo.com/wp-content/uploads/threejs.png"
+        alt="Logo"
+      />
+    </div>
   </div>
-  <div class="logo-image">
-    <img src="https://interrapidisimo.com/wp-content/uploads/threejs.png" alt="Logo" />
-  </div>
-</div>
-
   <div class="login-card">
     <h2>Iniciar sesion</h2>
-    <p>No tienes una cuenta? <a href="#" (click)="abrirModal(); $event.preventDefault()">Inscríbete</a></p>
-
-    <form>
+    <p>
+      No tienes una cuenta?
+      <a href="#" (click)="abrirModal(); $event.preventDefault()">Inscríbete</a>
+    </p>
+    <form (ngSubmit)="iniciarsesion()">
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>correo</mat-label>
-        <input matInput type="email" required [(ngModel)]="correousuario" name="correousuario" />
+        <input
+          matInput
+          type="email"
+          required
+          [(ngModel)]="correousuario"
+          name="correousuario"
+        />
       </mat-form-field>
-
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Contraseña</mat-label>
-        <input matInput type="password" required [(ngModel)]="password" name="password" />
+        <input
+          matInput
+          type="password"
+          required
+          [(ngModel)]="password"
+          name="password"
+        />
         <button mat-icon-button matSuffix>
           <mat-icon>visibility</mat-icon>
         </button>
       </mat-form-field>
-
       <a class="forgot-password" href="#">Olvidaste tu contraseña?</a>
-
-      <button mat-raised-button color="primary" class="sign-in-btn" (click)="iniciarsesion()" >Iniciar sesion</button>
-
+      <button
+        mat-raised-button
+        color="primary"
+        class="sign-in-btn"
+         type="submit">
+        Iniciar sesion
+      </button>
       <div class="divider"><span>o</span></div>
-
       <div class="social-login">
         <button mat-stroked-button class="google-btn">Google</button>
         <button mat-stroked-button class="facebook-btn">Facebook</button>
       </div>
     </form>
-
     <footer>&copy; 2025 - Interrapidisimo</footer>
   </div>
 </div>
-
-  <div class="modal" *ngIf="mostrarModal">
+<div class="modal" *ngIf="mostrarModal">
   <div class="modal-content">
     <span class="close" (click)="cerrarModal()">&times;</span>
     <h2>Formulario de inscripción</h2>
     <form>
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Nombre completo</mat-label>
-        <input matInput type="text" required [(ngModel)]="nombreCompleto" name="nombreCompleto" />
+        <input
+          matInput
+          type="text"
+          required
+          [(ngModel)]="nombreCompleto"
+          name="nombreCompleto"
+        />
       </mat-form-field>
-
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Correo electrónico</mat-label>
-        <input matInput type="email" required [(ngModel)]="correo" name="correo" />
+        <input
+          matInput
+          type="email"
+          required
+          [(ngModel)]="correo"
+          name="correo"
+        />
       </mat-form-field>
-
       <mat-form-field appearance="fill" class="full-width">
-  <mat-label>Rol</mat-label>
-  <mat-select required [(ngModel)]="rol" name="rol">
-    <mat-option value="admin">Estudiante</mat-option>
-    <mat-option value="user">Profesor</mat-option>
-  </mat-select>
-</mat-form-field>
-
+        <mat-label>Rol</mat-label>
+        <mat-select required [(ngModel)]="rol" name="rol">
+          <mat-option value="admin">Estudiante</mat-option>
+          <mat-option value="user">Profesor</mat-option>
+        </mat-select>
+      </mat-form-field>
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Contraseña</mat-label>
-        <input matInput type="password" required [(ngModel)]="clave" name="clave" />
+        <input
+          matInput
+          type="password"
+          required
+          [(ngModel)]="clave"
+          name="clave"
+        />
       </mat-form-field>
-
-      <button mat-raised-button color="primary" class="sign-in-btn" (click)="crearusuario()">Registrarse</button>
+      <button
+        mat-raised-button
+        color="primary"
+        class="sign-in-btn"
+        (click)="crearusuario()"
+      >
+        Registrarse
+      </button>
     </form>
   </div>
 </div>

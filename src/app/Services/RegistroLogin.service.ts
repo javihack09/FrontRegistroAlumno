@@ -21,7 +21,7 @@ export class RegistroLogin{
     Duplicidad(correo:string): Observable<any>{
         return this.http.get(`${this.apiURL+"/Duplicidad?correo="}${correo}` );
       }
-    
+
     iniciosesion(correo:string,clave:string): Observable<any>{
         const response = this.http.get(`${this.apiURL+"/InicioSesion?correo="}${correo}${"&clave="}${clave}`);
         return response

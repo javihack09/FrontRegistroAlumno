@@ -8,87 +8,76 @@
   align-items: center;
   justify-content: flex-start;
   padding: 4rem;
-
   .background-content {
     max-width: 40%;
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
     }
-
     p {
       font-size: 1rem;
       opacity: 0.8;
     }
   }
-
-.logo-container {
-  display: flex;
-  align-items: center; /* Centra verticalmente */
-  gap: 15px; /* Espacio entre texto e imagen */
-  font-family: 'Orbitron', sans-serif; /* Asegúrate de tener la fuente cargada */
-}
-
-.logo-text {
-  text-transform: uppercase;
-}
-
-.inter {
-  transform: skew(-15deg);
-  font-size: 24px;
-  color: #f58220; 
-  font-style: italic;
-  font-weight: 700;
-  margin-left: 25px;
-}
-.inter::before {
-  content: '';
-  position: absolute;
-  top: 40%;
-  left: 0;
-  width: 30%;
-  height: 2px; /* Grosor de la línea */
-  background: black; /* Color de la línea */
-  transform: translateY(-50%);
-  pointer-events: none; /* Para que no interfiera con el texto */
-}
-
-.slogan {
-  font-family: 'Arial Narrow', Arial, sans-serif; /* o usa una fuente similar */
-  color: white;
-  font-weight: 600; /* Semi-bold */
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 14px;
-  border-top: 2px solid white;
-}
-
-.rapidisimo {
-  font-size: 48px;
-  color: white;
-  font-weight: 900;
-  font-style: italic;
-  transform: skew(-15deg);
-  
-}
-
-.rapidisimo::before {
-  content: '';
-  position: absolute;
-  top: 35%;
-  left: 0;
-  width: 100%;
-  height: 2px; /* Grosor de la línea */
-  background: black; /* Color de la línea */
-  transform: translateY(-50%);
-  pointer-events: none; /* Para que no interfiera con el texto */
-}
-
-.logo-image img {
-  height: 320px; /* Ajusta el tamaño de la imagen */
-  width: auto;
-}
-
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: "Orbitron", sans-serif;
+  }
+  .logo-text {
+    text-transform: uppercase;
+  }
+  .inter {
+    transform: skew(-15deg);
+    font-size: 24px;
+    color: #f58220;
+    font-style: italic;
+    font-weight: 700;
+    margin-left: 25px;
+  }
+  .inter::before {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 30%;
+    height: 2px;
+    background: black;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .slogan {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 14px;
+    border-top: 2px solid white;
+  }
+  .rapidisimo {
+    font-size: 48px;
+    color: white;
+    font-weight: 900;
+    font-style: italic;
+    transform: skew(-15deg);
+  }
+  .rapidisimo::before {
+    content: "";
+    position: absolute;
+    top: 35%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: black;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .logo-image img {
+    height: 320px;
+    width: auto;
+  }
   .login-card {
     position: absolute;
     right: 4rem;
@@ -101,53 +90,44 @@
     padding: 2.5rem;
     width: 400px;
     z-index: 10;
-
     h2 {
       margin-bottom: 0.5rem;
     }
-
     a {
       color: #6c63ff;
       text-decoration: none;
     }
-
     form {
       margin-top: 1rem;
-
       .full-width {
         display: block;
         width: 100%;
         margin-bottom: 1rem;
       }
-
       .forgot-password {
         display: block;
         text-align: right;
         font-size: 0.875rem;
         margin-bottom: 1rem;
       }
-
       .sign-in-btn {
         width: 100%;
         background-color: #001802;
         color: rgb(255, 255, 255);
         margin-bottom: 1rem;
       }
-
       .divider {
         text-align: center;
         margin: 1rem 0;
         position: relative;
-
         span {
           background: white;
           padding: 0 1rem;
           position: relative;
           z-index: 1;
         }
-
         &::before {
-          content: '';
+          content: "";
           position: absolute;
           top: 50%;
           left: 0;
@@ -157,18 +137,15 @@
           z-index: 0;
         }
       }
-
       .social-login {
         display: flex;
         gap: 1rem;
-
         .google-btn,
         .facebook-btn {
           flex: 1;
         }
       }
     }
-
     footer {
       margin-top: 2rem;
       text-align: center;
@@ -177,7 +154,6 @@
     }
   }
 }
-
 .modal {
   position: fixed;
   z-index: 999;
@@ -186,13 +162,12 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
 .modal-content {
   background-color: #fff;
   padding: 2rem;
@@ -204,13 +179,11 @@
   display: flex;
   flex-direction: column;
 }
-
 .modal-content form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-
 .close {
   color: #aaa;
   position: absolute;
@@ -220,8 +193,6 @@
   font-weight: bold;
   cursor: pointer;
 }
-
 .close:hover {
   color: #000;
 }
-

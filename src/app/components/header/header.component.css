@@ -1,52 +1,37 @@
-/* header.component.css */
-
-/* Espaciador para empujar los botones hacia la derecha */
+::ng-deep mat-toolbar.mat-primary {
+  background-color: white
+}
 .spacer {
-    flex: 1 1 auto;
-  }
-  
-  /* Título del toolbar */
-  .toolbar-title {
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
-  
-  /* Botón de menú móvil */
+  flex: 1 1 auto;
+}
+.toolbar-title {
+  font-size: 1.0rem;
+  font-weight: 500;
+  color: #005cbb;
+}
+.mobile-menu-button {
+  display: none;
+}
+.desktop-menu {
+  display: flex;
+}
+button.mat-button {
+  margin-left: 8px;
+}
+.sidenav-container {
+  display: none;
+}
+.sidenav {
+  width: 250px;
+}
+@media (max-width: 768px) {
   .mobile-menu-button {
-    display: none; /* Oculto en pantallas grandes */
+    display: block;
   }
-  
-  /* Menú de escritorio */
   .desktop-menu {
-    display: flex;
+    display: none;
   }
-  
-  /* Margen opcional para los botones */
-  button.mat-button {
-    margin-left: 8px;
-  }
-  
-  /* Estilos para el sidenav */
   .sidenav-container {
-    display: none; /* Oculto en pantallas grandes */
+    display: block;
   }
-  
-  .sidenav {
-    width: 250px;
-  }
-  
-  /* Media Queries para pantallas pequeñas */
-  @media (max-width: 768px) {
-    .mobile-menu-button {
-      display: block; /* Mostrar en pantallas pequeñas */
-    }
-  
-    .desktop-menu {
-      display: none; /* Ocultar en pantallas pequeñas */
-    }
-  
-    .sidenav-container {
-      display: block; /* Mostrar sidenav en pantallas pequeñas */
-    }
-  }
-  
+}

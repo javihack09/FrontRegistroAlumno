@@ -32,7 +32,6 @@ export class LoginComponent {
    private Duplicidad = false;
 
    constructor(private router:Router, ) {
-   
       this.nuevoregistro = {
        nombrecompleto:"",
        correo:"",
@@ -40,37 +39,27 @@ export class LoginComponent {
        clave:"",
        idregistro:0         
      };
-   
      }
-
   abrirModal() {
     this.mostrarModal = true;
   }
-
   cerrarModal() {
     this.mostrarModal = false;
   }
-
   iniciarsesion(){
-
     this.Registro.iniciosesion(this.correousuario,this.password).subscribe({
         next: (respuesta) =>{
-
           if(respuesta.id>0)
           {
             alert("inicio correcto")
-
             localStorage.setItem('miDato', respuesta.id.toString());
             this.router.navigate(['/Inicio']);
           }
           else{
             alert("usuario o contraseña incorrecta")
           }
-
         }
     })
-
-
   }
 
 crearusuario(){
@@ -78,36 +67,26 @@ crearusuario(){
     this.nuevoregistro.correo = this.correo ;
     this.nuevoregistro.rol = this.rol;
     this.nuevoregistro.clave = this.clave;
-    
     this.Registro.Duplicidad(this.correo).subscribe({
         next: (respuesta) =>{
-
           if(respuesta.duplicidad)
      {
       alert("El Correo ya existe en el sistema")
       this.cerrarModal();
      }
-     else{
-          
+     else{       
     this.Registro.RegistrarUsuario(this.nuevoregistro).subscribe({
       next: (respuesta) => {
         this.nuevoregistro.idregistro = respuesta.id;
-
         localStorage.setItem('miDato', respuesta.id.toString());
-
         alert("Registro Creado Exitosamente");
         this.cerrarModal();
       },
       error: (error) => {
         alert("Ocurrio un error");
       }
-    });
-    
+    });   
   }
         }})
-
-     
-
 }
-
 }

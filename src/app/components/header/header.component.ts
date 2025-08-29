@@ -10,33 +10,35 @@ import { Router } from '@angular/router';
   selector: 'app-header',
   standalone: true,
   imports: [
-    MatToolbarModule, // Toolbar de Angular Material
-    MatButtonModule,  // Botones de Angular Material
-    MatIconModule,    // Iconos de Angular Material
-    MatSidenavModule, // Sidenav de Angular Material
-    MatMenuModule     // Menú desplegable de Angular Material
+    MatToolbarModule, 
+    MatButtonModule, 
+    MatIconModule, 
+    MatSidenavModule, 
+    MatMenuModule, 
   ],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
   @ViewChild('sidenav') sidenav!: any;
 
   constructor(private router: Router) {}
-
   irAInicio() {
     this.router.navigate(['/Inicio']);
     if (this.sidenav) {
-      this.sidenav.close(); 
+      this.sidenav.close();
     }
   }
-
   irARegistroAlumno() {
     this.router.navigate(['/Alumno']);
     if (this.sidenav) {
       this.sidenav.close();
     }
   }
+cerrarsesion(){
 
-  
+  this.router.navigate(['/Login']);
+
+}
+
 }

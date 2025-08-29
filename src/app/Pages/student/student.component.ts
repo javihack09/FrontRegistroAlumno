@@ -22,6 +22,8 @@ export class StudentComponent {
 
   public newEstudiante!: Estudiante;
   nombreEstudiante: string = '';
+  filtroMateria: string = '';
+  listMateriaCompleta: any[] = [];
   private estudianteServicio = inject(EstudianteService);
 
   id = 0;
@@ -37,11 +39,21 @@ export class StudentComponent {
   
   public listMateria!:any[];
 
+
+filtrarMaterias() {
+  const filtro = this.filtroMateria.toLowerCase();
+
+  this.listMateria = this.listMateriaCompleta.filter(materia =>
+    materia.nombreMateria.toLowerCase().includes(filtro)
+  );
+}
+
   obtenerMaterias(){
     this.materiaServicio.lista().subscribe({
       next:(data)=>{
         if(data.length > 0){
           this.listMateria = data
+          this.listMateriaCompleta = data;
           console.log(this.listMateria);
         }
       },
@@ -87,7 +99,7 @@ export class StudentComponent {
   }
 
   getSelectedValues(): number[] {
-    return this.listMateria
+    return this.listMateriaCompleta
       .filter((materia) => materia.selected) 
       .map((materia) => materia.idMaterias); 
   }
@@ -150,7 +162,7 @@ export class StudentComponent {
   displayedColumns: string[] = ['nombreMateria', 'nombreProfesor', 'checkbox'];
 
   crearEstudiante(){
-
+debugger
     const miDato = localStorage.getItem('miDato'); 
 
     this.newEstudiante.IdEstudiante = parseInt(miDato!);
@@ -160,12 +172,21 @@ export class StudentComponent {
 
     console.log(this.newEstudiante)
 
-    this.estudianteServicio.crearEstudiante(this.newEstudiante).subscribe({
+this.estudianteServicio.DobleRegistro(parseInt(miDato!).toString()).subscribe({
+      next: (respuesta) => {
+
+         if(respuesta.duplicidad)
+     {
+
+      alert("Creditos Insuficientes")
+
+     }
+     else{
+
+      this.estudianteServicio.crearEstudiante(this.newEstudiante).subscribe({
       next: (respuesta) => {
         this.newEstudiante.nombreAlumno = respuesta.id;
 
-        localStorage.setItem('miDato', respuesta.id.toString());
-        
         alert("Registro Creado Exitosamente");
         this.router.navigate(['/Estudiante',miDato]);
       },
@@ -173,8 +194,17 @@ export class StudentComponent {
         alert("Ocurrio un error");
       }
     })
+
+     }
+
+      },
+      error: (error) => {
+        alert("Ocurrio un error");
+      }
+    })
+
     
-    console.log(this.newEstudiante.nombreAlumno)
+    
 
     ;
     

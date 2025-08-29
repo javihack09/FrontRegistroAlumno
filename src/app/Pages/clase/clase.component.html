@@ -1,40 +1,41 @@
 <div class="body-container">
+  <div class="form-section"></div>
 
-    <div class="form-section">
+  <div class="table-section">
+    <mat-card-title> <p>Lista de Estudiantes</p></mat-card-title>
+
+    <div class="table-container">
+      <table
+        mat-table
+        [dataSource]="listEstudiantes"
+        class="mat-elevation-z8"
+        multiTemplateDataRows
+      >
+        <ng-container matColumnDef="nombreAlumno">
+          <th mat-header-cell *matHeaderCellDef>Nombre Alumno</th>
+          <td mat-cell *matCellDef="let element">{{ element.nombreAlumno }}</td>
+        </ng-container>
+        <ng-container matColumnDef="nombreMateria">
+          <th mat-header-cell *matHeaderCellDef>Materia</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.nombreMateria }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="nombreProfesor">
+          <th mat-header-cell *matHeaderCellDef>Profesor</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.nombreProfesor }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
     </div>
-  
-    <div class="table-section">
-      <mat-card-title>
-      <p>Lista de Estudiantes</p></mat-card-title>
-      
-      <div class="table-container">
-        <table mat-table [dataSource]="listEstudiantes" class="mat-elevation-z8" multiTemplateDataRows>
-  
-          <ng-container matColumnDef="nombreAlumno">
-            <th mat-header-cell *matHeaderCellDef> Nombre Alumno </th>
-            <td mat-cell *matCellDef="let element"> {{ element.nombreAlumno }} </td>
-          </ng-container>
-  
-  
-          <ng-container matColumnDef="nombreMateria">
-            <th mat-header-cell *matHeaderCellDef> Materia </th>
-            <td mat-cell *matCellDef="let element"> {{ element.nombreMateria }} </td>
-          </ng-container>
-  
-  
-          <ng-container matColumnDef="nombreProfesor">
-            <th mat-header-cell *matHeaderCellDef> Profesor </th>
-            <td mat-cell *matCellDef="let element"> {{ element.nombreProfesor }} </td>
-          </ng-container>
-  
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-        
-      </div>
-      <div class="buttonsClass">
-        <button mat-raised-button color="primary" (click)="irAInicio()">Regresar</button>
-      </div>
+    <div class="buttonsClass">
+      <button mat-raised-button color="primary" (click)="irAInicio()">
+        Regresar
+      </button>
     </div>
   </div>
-  
+</div>

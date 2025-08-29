@@ -22,6 +22,10 @@ export class EstudianteService {
     return this.http.post<{ id: string }>(this.apiURL, data);
   }
 
+   DobleRegistro(idregistro:string): Observable<any>{
+        return this.http.get(`${this.apiURL+"/DobleRegistro?idregistro="}${idregistro}` );
+      }
+
   obtener(id:number){
     return this.http.get<verClase>(`${this.apiURL}/${id}`);
   }

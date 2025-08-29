@@ -2,22 +2,17 @@
   <button mat-icon-button (click)="sidenav.toggle()" class="mobile-menu-button">
     <mat-icon>menu</mat-icon>
   </button>
-
   <span class="toolbar-title">Administración de Estudiantes</span>
-
   <span class="spacer"></span>
-
   <div class="desktop-menu">
     <button mat-button (click)="irAInicio()">Inicio</button>
     <button mat-button (click)="irARegistroAlumno()">Registro Alumno</button>
   </div>
 </mat-toolbar>
-
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="over" class="sidenav">
     <button mat-button (click)="irAInicio()">Inicio</button>
     <button mat-button (click)="irARegistroAlumno()">Registro Alumno</button>
   </mat-sidenav>
-
   <mat-sidenav-content> </mat-sidenav-content>
 </mat-sidenav-container>

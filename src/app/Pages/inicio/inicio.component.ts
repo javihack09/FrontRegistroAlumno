@@ -26,13 +26,11 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
     const miDato = localStorage.getItem('miDato');
-
     if (miDato) {
       this.idEstudiante = parseInt(miDato);
       this.obtenerEstudiantes();
     }
   }
-
   obtenerEstudiantes() {
     if (this.idEstudiante === undefined) {
       const miDato = localStorage.getItem('miDato');
@@ -50,21 +48,17 @@ export class InicioComponent implements OnInit {
       },
     });
   }
-
   irARegistroAlumno(): void {
     this.router.navigate(['/Alumno']);
   }
-
   irAInicio(): void {
     const miDato = localStorage.getItem('miDato');
     console.log(miDato);
 
     this.router.navigate(['/Estudiante', miDato]);
   }
-
   clase(materia: string): void {
     this.router.navigate(['/clase'], { queryParams: { clase: materia } });
   }
-
   constructor(private router: Router) {}
 }

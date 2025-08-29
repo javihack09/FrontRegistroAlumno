@@ -53,6 +53,5 @@ export class ClaseComponent implements OnInit {
 
     this.router.navigate(['/Estudiante', parseInt(miDato!)]);
   }
-
   constructor(private router: Router, private route: ActivatedRoute) {}
 }

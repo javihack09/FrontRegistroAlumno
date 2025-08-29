@@ -23,14 +23,12 @@ export class HeaderComponent {
   @ViewChild('sidenav') sidenav!: any;
 
   constructor(private router: Router) {}
-
   irAInicio() {
     this.router.navigate(['/Inicio']);
     if (this.sidenav) {
       this.sidenav.close();
     }
   }
-
   irARegistroAlumno() {
     this.router.navigate(['/Alumno']);
     if (this.sidenav) {

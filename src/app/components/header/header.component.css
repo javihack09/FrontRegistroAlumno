@@ -1,41 +1,32 @@
 .spacer {
   flex: 1 1 auto;
 }
-
 .toolbar-title {
   font-size: 1.5rem;
   font-weight: 500;
 }
-
 .mobile-menu-button {
   display: none;
 }
-
 .desktop-menu {
   display: flex;
 }
-
 button.mat-button {
   margin-left: 8px;
 }
-
 .sidenav-container {
   display: none;
 }
-
 .sidenav {
   width: 250px;
 }
-
 @media (max-width: 768px) {
   .mobile-menu-button {
     display: block;
   }
-
   .desktop-menu {
     display: none;
   }
-
   .sidenav-container {
     display: block;
   }

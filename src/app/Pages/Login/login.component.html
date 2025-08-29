@@ -12,14 +12,12 @@
       />
     </div>
   </div>
-
   <div class="login-card">
     <h2>Iniciar sesion</h2>
     <p>
       No tienes una cuenta?
       <a href="#" (click)="abrirModal(); $event.preventDefault()">Inscríbete</a>
     </p>
-
     <form>
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>correo</mat-label>
@@ -31,7 +29,6 @@
           name="correousuario"
         />
       </mat-form-field>
-
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Contraseña</mat-label>
         <input
@@ -45,30 +42,23 @@
           <mat-icon>visibility</mat-icon>
         </button>
       </mat-form-field>
-
       <a class="forgot-password" href="#">Olvidaste tu contraseña?</a>
-
       <button
         mat-raised-button
         color="primary"
         class="sign-in-btn"
-        (click)="iniciarsesion()"
-      >
+        (click)="iniciarsesion()">
         Iniciar sesion
       </button>
-
       <div class="divider"><span>o</span></div>
-
       <div class="social-login">
         <button mat-stroked-button class="google-btn">Google</button>
         <button mat-stroked-button class="facebook-btn">Facebook</button>
       </div>
     </form>
-
     <footer>&copy; 2025 - Interrapidisimo</footer>
   </div>
 </div>
-
 <div class="modal" *ngIf="mostrarModal">
   <div class="modal-content">
     <span class="close" (click)="cerrarModal()">&times;</span>
@@ -84,7 +74,6 @@
           name="nombreCompleto"
         />
       </mat-form-field>
-
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Correo electrónico</mat-label>
         <input
@@ -95,7 +84,6 @@
           name="correo"
         />
       </mat-form-field>
-
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Rol</mat-label>
         <mat-select required [(ngModel)]="rol" name="rol">
@@ -103,7 +91,6 @@
           <mat-option value="user">Profesor</mat-option>
         </mat-select>
       </mat-form-field>
-
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Contraseña</mat-label>
         <input
@@ -114,7 +101,6 @@
           name="clave"
         />
       </mat-form-field>
-
       <button
         mat-raised-button
         color="primary"
